@@ -18,7 +18,7 @@ namespace LibApp.Controllers.API
             _mapper = mapper;
         }
 
-        // GET /api/customers
+        // GET /api/customers test
         [HttpGet]
         public IActionResult GetCustomers()
         {
