@@ -28,5 +28,32 @@
 
             </tr>
         }
+        @section Scripts
+        {
+            <script>
+                $(document).ready(function () {
+                    $('#books').DataTable({
+                        ajax: {
+                            url: "api/books",
+                            dataSrc: ""
+                        },
+                        columns: [
+                            {
+                                data: "title",
+                                render: function (data, type, book) {
+                                    return "<a href='books/edit/" + book.id + "'>" + book.title + "</a>";
+                                }
+                            },
+                            {
+                                data: "genre.name"
+                            },
+                            {
+                                data: "author"
+                            },
+                        ]
+                    });
+                });
+            </script>
+        }
     </tbody>
 </table>
